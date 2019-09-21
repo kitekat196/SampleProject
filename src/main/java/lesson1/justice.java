@@ -4,21 +4,25 @@ import java.util.Scanner;
 public class justice {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Money");
-        int money = sc.nextInt();
-        System.out.println("countFamily");
-        int countFamily = sc.nextInt();
-        System.out.println("price");
-        int price = sc.nextInt();
-    if(money < 0 || countFamily < 0 || price < 0) {
-        System.exit(0);
-    }
-        countFamily = countFamily * price;
-        if((money - countFamily) > 0) {
-            System.out.println("sdacha = " + (money - countFamily));
+        int count = -1;
+        int sum = 0;
+        int nomMoney = 0;
+        while (count != 0)
+        {
+            System.out.println("Enter money");
+            count = sc.nextInt();
+            if(count == 1 || count == 2 || count == 5 || count == 10){
+                sum = sum + count;
+                if(nomMoney < count)
+                {
+                    nomMoney = count;
+                }
+            }
+            else
+            {
+                System.out.println("Error");
+            }
         }
-        else {
-            System.out.println("den9k net");
-        }
+        System.out.println("sum muney = "+sum +"\n"+ "max nom. money = " + nomMoney);
     }
 }
