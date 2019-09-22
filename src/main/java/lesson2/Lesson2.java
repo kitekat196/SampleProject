@@ -8,29 +8,19 @@ public class Lesson2 {
     {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        int b = sc.nextInt();
-        int c = sc.nextInt();
-        int max = maxNumber(a,b,c);
+        boolean max = maxNumber(a);
         System.out.println(max);
     }
-    public static int maxNumber(int a, int b, int c)
+    public static boolean maxNumber(int a)
     {
-        if(a > b && a > c) {
-            return a;
+        while ( a % 2 == 0 &&  a != 1) {
+            a = a / 2;
         }
-        else if(b > a && b > c){
-            return b;
+        if (a == 1) {
+            return true;
+        } else{
+            return false;
         }
-        else if (c > a && c > b) {
-            return c;
-        }
-        else if(a == c && a == b) {
-            return a;
-        }
-        else {
-            return 0;
-        }
-
     }
 }
 
