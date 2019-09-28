@@ -7,21 +7,32 @@ public class Lesson2 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        boolean max = maxNumber(a);
-        System.out.println(max);
-    }
-    public static boolean maxNumber(int a)
-    {
-        while ( a % 2 == 0 &&  a != 1) {
-            a = a / 2;
+        int a = sc.nextInt(), b = sc.nextInt(), c = sc.nextInt();
+        System.out.println("d");
+        int d = sc.nextInt();
+        if(a  * b == d) {
+            System.out.println(a+" * "+b);
         }
-        if (a == 1) {
-            return true;
-        } else{
-            return false;
+        if(a * c == d) {
+            System.out.println(a+" * "+c);
         }
+        if(c * b == d) {
+            System.out.println(c+" * "+b);
+        }
+        if(a * a == d) {
+            System.out.println(a+" * "+a);
+        }
+        if(b * b == d) {
+            System.out.println(b+" * "+b);
+        }
+        if(c * c == d) {
+            System.out.println(c+" * "+c);
+        }
+
+
+
     }
+
 }
 
 
