@@ -1,4 +1,5 @@
 import Lesson4.Authentication;
+import Lesson4.ArrayExaple;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,6 +35,18 @@ public class TestAuthentication
     public  void TestWord(){
         String res = Authentication.TestString("i love dog");
         assertEquals("i *** dog",res);
+    }
+    @Test
+    public void  TestSrA(){
+        int[] mas = {1,2,3,4};
+        float res = ArrayExaple.SrATest(mas);
+        assertEquals(2.5,res);
+    }
+    @Test
+    public void  TestSrA2(){
+        int[] mas = {};
+        float res = ArrayExaple.SrATest(mas);
+        assertEquals(0,res);
     }
 
 }

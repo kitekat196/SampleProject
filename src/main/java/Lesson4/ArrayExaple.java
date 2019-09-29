@@ -8,16 +8,26 @@ public class ArrayExaple {
         System.out.println("Enter size mas");
         int size = sc.nextInt();
         int[] mas = new int[size];
-        float srA = 0;
+
         System.out.println("Enter el mas");
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < mas.length; i++) {
             mas[i] = sc.nextInt();
         }
-        for (int i = 0; i < size; i++) {
-                srA = srA + mas[i];
+
+
+
+        System.out.println(SrATest(mas));
+
+    }
+    public static float SrATest(int[] mas) {
+        float srA = 0;
+        for (int i = 0; i < mas.length; i++) {
+            srA = srA + mas[i];
         }
-        System.out.println(srA/size);
-
-
+        if(mas.length == 0)
+        {
+            return 0;
+        }
+        return srA/mas.length;
     }
 }
