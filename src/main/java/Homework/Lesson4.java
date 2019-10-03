@@ -7,11 +7,7 @@ public class Lesson4 {
             str = str + roles[i] + ": \n";
             for (int j = 0; j < textLines.length; j++) {
                 if(textLines[j].startsWith(roles[i] + ": ")){
-                    str = str + (j+1)+") ";
-                    for (int k = roles[i].length()+2; k < textLines[j].length(); k++) {
-                        str = str + textLines[j].charAt(k);
-                    }
-                    str = str + "\n";
+                    str = str + (j+1)+") "+ textLines[j].substring(roles[i].length()+2, textLines[j].length())+ "\n";
                 }
             }
             str = str + "\n";
