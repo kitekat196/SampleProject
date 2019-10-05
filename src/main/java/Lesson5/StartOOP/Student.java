@@ -1,6 +1,7 @@
-package Lesson5;
+package Lesson5.StartOOP;
 
-public class Student extends Human implements  Polite
+
+public class Student extends Human implements Polite
 {
 
 	private int form;

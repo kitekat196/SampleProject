@@ -1,4 +1,4 @@
-package Lesson5;
+package Lesson5.StartOOP;
 
 	public class Human {
 	protected String name;

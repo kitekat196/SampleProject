@@ -1,6 +1,8 @@
-package Lesson5;
+package Lesson5.StartOOP;
 
-public class Teacher extends Human implements Polite{
+
+public class Teacher extends Human implements Polite
+{
 	private String subject;
 
 	public Teacher(String name, int age, String subject)
