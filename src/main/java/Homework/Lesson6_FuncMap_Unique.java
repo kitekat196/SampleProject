@@ -12,7 +12,6 @@ public class Lesson6_FuncMap_Unique {
         list.add("cola");  list.add("pepsi");
         list.add("cola");  list.add("pepsi");
         list.add("cola");  list.add("fanta");
-        list.add("cola");  list.add("fanta");
         System.out.println(countInList(list));
     }
     public static Map<String,Integer> countInList(List<String> list){
