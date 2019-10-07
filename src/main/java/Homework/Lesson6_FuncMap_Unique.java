@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Map;
 import java.util.HashMap;
-public class FuncMap_Unique {
+public class Lesson6_FuncMap_Unique {
     public static void main(String[] args) {
         List<String> list = new ArrayList<>();
         list.add("cola");  list.add("pepsi");
