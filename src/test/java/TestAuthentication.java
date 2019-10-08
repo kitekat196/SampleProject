@@ -1,6 +1,10 @@
+import Homework.Lesson6_FuncMap_Unique;
+import Homework.Lesson6_symmetricDifference;
 import Lesson4.Authentication;
 import Lesson4.ArrayExaple;
 import org.junit.jupiter.api.Test;
+
+import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestAuthentication
@@ -48,5 +52,20 @@ public class TestAuthentication
         float res = ArrayExaple.SrATest(mas);
         assertEquals(0,res);
     }
-
+    @Test
+    public  void  countInListTest() {
+        List<String> list = new ArrayList<>();
+        list.add("cola");  list.add("pepsi");
+        list.add("cola");  list.add("pepsi");
+        list.add("cola");  list.add("pepsi");
+        list.add("cola");  list.add("fanta");
+        list.add("fanta"); list.add("sprite");
+        Map<String,Integer> map = new HashMap<>();
+        map.put("cola", 4);
+        map.put("pepsi", 3);
+        map.put("fanta", 2);
+        map.put("sprite",1);
+        Map<String,Integer> res = Lesson6_FuncMap_Unique.countInList(list);
+        assertEquals(map,res);
+    }
 }
