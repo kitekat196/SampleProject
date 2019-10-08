@@ -13,15 +13,9 @@ public class Lesson6_symmetricDifference {
         System.out.println(symmetricDifference(set1,set2));
     }
     public static Set<Integer> symmetricDifference(Set<Integer> set1, Set<Integer> set2){
-        Set<Integer> set3 = new HashSet<>();
-        for (Integer x: set1) {
-            for (Integer y: set2) {
-                if(x.equals(y)) {
-                    set3.add(y);
-                }
-            }
-        }
+        Set<Integer> set3 = new HashSet<>(set1);
         set1.addAll(set2);
+        set3.retainAll(set2);
         set1.removeAll(set3);
         return set1;
     }
