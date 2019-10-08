@@ -68,4 +68,23 @@ public class TestAuthentication
         Map<String,Integer> res = Lesson6_FuncMap_Unique.countInList(list);
         assertEquals(map,res);
     }
+    @Test void SymmetricDifferenceTest() {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+        set1.add(1);        set2.add(4);
+        set1.add(2);        set2.add(5);
+        set1.add(3);        set2.add(6);
+        set1.add(4);        set2.add(7);
+        set1.add(5);        set2.add(8);
+        Set<Integer> setInt = Lesson6_symmetricDifference.symmetricDifference(set1,set2);
+        Set<Integer> res = new HashSet<>();
+        res.add(1);
+        res.add(2);
+        res.add(3);
+        res.add(6);
+        res.add(7);
+        res.add(8);
+        assertEquals(res,setInt);
+    }
+
 }
