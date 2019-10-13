@@ -1,4 +1,4 @@
-package Lesson8;
+package Lesson8.Application;
 import java.util.Scanner;
 
 public class LessonException {
