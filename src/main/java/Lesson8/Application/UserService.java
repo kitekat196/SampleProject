@@ -46,10 +46,10 @@ public class UserService {
             if(pair.getKey().equals(user.getLogin())) {
                 users.remove(user.getLogin());
                 users.put(user.getLogin(),user);
+                System.out.println("The data of the Union member has been successfully changed");
                 return true;
             }
         }
-        System.out.println("User not found");
         return false;
     }
     public boolean auth(String login, String password){
@@ -59,6 +59,15 @@ public class UserService {
                 return true;
             }
         }
+        return false;
+    }
+    public boolean searchUser(String login){
+        for (Map.Entry<String, User> pair: users.entrySet()) {
+            if(pair.getKey().equals(login)) {
+                return true;
+            }
+        }
+        System.out.println("A member not found");
         return false;
     }
 

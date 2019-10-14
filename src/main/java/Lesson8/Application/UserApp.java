@@ -5,14 +5,18 @@ public class UserApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         UserService userService = new UserService();
-        System.out.println("login");
-        String log = sc.next();
-        System.out.println("password");
-        String pass = sc.next();
-        if(userService.auth(log, pass)) {
+        while(true){
+            System.out.println("login");
+            String log = sc.next();
+            System.out.println("password");
+            String pass = sc.next();
+            if(userService.auth(log, pass)){
+                System.out.println("access is allowed\n");
+            } else {
+                System.out.println("incorrect login or password\ntry again\n\n");
+            }
             int command;
-            System.out.println("access is allowed");
-            while (true) {
+            while (userService.auth(log, pass)) {
                 System.out.println("1. GetByLogin\n2. AddUser\n3. DeleteByLogin\n4. getAllUser\n5. editUser\n6. Exit");
                 command = sc.nextInt();
                 switch (command) {
@@ -22,16 +26,28 @@ public class UserApp {
                         break;
                     }
                     case 2: {
+                        System.out.println("Enter login or Email");
                         String login = sc.next();
+                        System.out.println("Enter password");
                         String password = sc.next();
+                        System.out.println("Enter your first name");
                         String name = sc.next();
                         User user = new User(login,password,name);
-                        userService.addUser(login, user);
+                        if(userService.addUser(login, user)){
+                            System.out.println("A member of the Union successfully registered\n");
+                        } else{
+                            System.out.println("Oops, an error occurred\nTry again\n");
+                        }
                         break;
                     }
                     case 3: {
                         String login = sc.next();
-                        userService.deleteByLogin(login);
+                        if(login.equals("admin")) {
+                            System.out.println("Error");
+                        } else {
+                            System.out.println("A member of the Union was expelled");
+                            userService.deleteByLogin(login);
+                        }
                         break;
                     }
                     case 4: {
@@ -40,29 +56,27 @@ public class UserApp {
                     }
                     case 5: {
                         String login = sc.next();
-                        String password = sc.next();
-                        String name = sc.next();
-                        User user = new User(login, password, name);
-                        userService.editUser(user);
+                        if(userService.searchUser(login)) {
+                            if (login.equals("admin")) {
+                                System.out.println("You wanted to expel the head of the Union. Is this an attempt at revolution?\n");
+                                break;
+                            } else {
+                                System.out.println("Enter new password");
+                                String password = sc.next();
+                                System.out.println("Enter new first name");
+                                String name = sc.next();
+                                User user = new User(login, password, name);
+                                userService.editUser(user);
+                            }
+                        }
                         break;
                     }
                     case 6:{
-                        System.exit(0);
+                        log = "";
+                        pass = "";
                     }
                 }
             }
         }
-        else {
-            System.out.println("Incorrect login or password");
-        }
     }
 }
-
-
-//
-//авторизация
-//while
-//считывание команд
-//switch
-//
-
