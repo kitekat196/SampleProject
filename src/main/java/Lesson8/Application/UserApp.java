@@ -1,6 +1,6 @@
 package Lesson8.Application;
 import java.util.Scanner;
-
+//
 public class UserApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -17,7 +17,8 @@ public class UserApp {
             }
             int command;
             while (userService.auth(log, pass)) {
-                System.out.println("1. GetByLogin\n2. AddUser\n3. DeleteByLogin\n4. getAllUser\n5. editUser\n6. Exit");
+                userService.SaveData();
+                System.out.println("1. GetByLogin\n2. AddUser\n3. DeleteByLogin\n4. getAllUser\n5. editUser\n0. Exit");
                 command = sc.nextInt();
                 switch (command) {
                     case 1: {
@@ -41,12 +42,13 @@ public class UserApp {
                         break;
                     }
                     case 3: {
+                        System.out.println("Enter login\n");
                         String login = sc.next();
-                        if(login.equals("admin")) {
-                            System.out.println("Error");
-                        } else {
+                        if(userService.deleteByLogin(login)) {
                             System.out.println("A member of the Union was expelled");
-                            userService.deleteByLogin(login);
+                        }
+                        else {
+                            System.out.println("Error");
                         }
                         break;
                     }
@@ -71,9 +73,8 @@ public class UserApp {
                         }
                         break;
                     }
-                    case 6:{
-                        log = "";
-                        pass = "";
+                    case 0:{
+                        System.exit(0);
                     }
                 }
             }

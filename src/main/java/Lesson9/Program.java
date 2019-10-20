@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Program {
 	public static void main(String[] args) {
 		List<User> list = new ArrayList<>();
-		try (FileReader reader = new FileReader("src/main/java/resources/numders.txt")) {
+		try (FileReader reader = new FileReader("src/main/java/resources/numbers.txt")) {
 			Scanner sc = new Scanner(reader);
 
 			while (sc.hasNext()) {

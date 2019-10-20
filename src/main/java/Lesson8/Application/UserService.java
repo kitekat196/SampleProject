@@ -1,4 +1,6 @@
 package Lesson8.Application;
+import Homework.FileHalper;
+
 import java.util.*;
 
 
@@ -6,9 +8,10 @@ public class UserService {
     private Map<String,User> users;
 
     public UserService() {
-        users = new HashMap<>();
-        User adminUser = new User("admin","admin", "Egor");
-        users.put("admin",adminUser);
+        users = FileHalper.readFromFile("src\\main\\java\\resources\\file.txt");
+    }
+    public void SaveData(){
+        FileHalper.saveToFile("src\\main\\java\\resources\\file.txt",users);
     }
 
     public User getByLogin (String login){
